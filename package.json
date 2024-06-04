@@ -1,6 +1,6 @@
 {
   "name": "@devmy/cypress-dotenv",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "integrate `dotenv` configuration with `@dotenv-run/core` into your Cypress setup, simplifying the management of environment variables for both component and end-to-end (E2E) tests.",
   "type": "commonjs",
   "module": "./dist/index.mjs",
