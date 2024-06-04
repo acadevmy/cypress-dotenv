@@ -1,0 +1,77 @@
+{
+  "name": "@devmy/cypress-dotenv",
+  "version": "0.0.0",
+  "description": "integrate `dotenv` configuration with `@dotenv-run/core` into your Cypress setup, simplifying the management of environment variables for both component and end-to-end (E2E) tests.",
+  "type": "commonjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.js",
+    "default": "./dist/index.js",
+    "types": "./dist/index.d.ts"
+  },
+  "scripts": {
+    "build": "tsup",
+    "lint": "eslint 'lib/src/**/*.ts'",
+    "lint:fix": "eslint 'lib/src/**/*.ts' --fix",
+    "release": "semantic-release"
+  },
+  "keywords": [
+    "cypress",
+    "dotenv",
+    "environment variables",
+    "testing",
+    "typescript",
+    "component testing",
+    "end-to-end testing",
+    "e2e",
+    "cypress config",
+    "env",
+    "dotenv-run",
+    ".env.vault",
+    "vault",
+    "dotenv_key"
+  ],
+  "license": "MIT",
+  "author": ".devmy",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acadevmy/cypress-dotenv.git"
+  },
+  "bugs": {
+    "url": "https://github.com/acadevmy/cypress-dotenv/issues"
+  },
+  "dependencies": {
+    "@dotenv-run/core": "^1.3.5",
+    "cypress": "^13.10.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.0",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "github:semantic-release/git",
+    "@semantic-release/npm": "^12.0.1",
+    "@semantic-release/release-notes-generator": "^14.0.0",
+    "@types/lodash": "^4.17.4",
+    "@types/node": "^20.14.0",
+    "@typescript-eslint/eslint-plugin": "^7.11.0",
+    "eslint": "8.57.0",
+    "eslint-config-prettier": "^8.10.0",
+    "eslint-plugin-cypress": "2.15.1",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-simple-import-sort": "^12.1.0",
+    "prettier": "^3.2.5",
+    "semantic-release": "^24.0.0",
+    "tsup": "^8.1.0",
+    "typescript": "^5.3.3"
+  },
+  "packageManager": "npm@10.8.1"
+}
