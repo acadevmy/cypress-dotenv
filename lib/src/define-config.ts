@@ -15,8 +15,18 @@ export const defineConfigWithDotenv = (
   const { dotenv, ...config } = dotenvConfigOptions;
   const oldSetupNodeEvents = config.setupNodeEvents;
 
-  config.setupNodeEvents = (onPluginEvent, pluginConfigOptions) => {
-    const nextPluginConfigOptions = parseEnvVariables(dotenv, pluginConfigOptions);
+  config.setupNodeEvents = (
+    onPluginEvent,
+    pluginConfigOptions,
+  ):
+    | Promise<Cypress.PluginConfigOptions | void>
+    | Cypress.PluginConfigOptions
+    | void
+    | undefined => {
+    const nextPluginConfigOptions = parseEnvVariables(
+      dotenv,
+      pluginConfigOptions,
+    );
 
     return oldSetupNodeEvents?.(onPluginEvent, nextPluginConfigOptions);
   };
