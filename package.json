@@ -9,10 +9,10 @@
     "dist"
   ],
   "exports": {
+    "types": "./dist/index.d.ts",
     "import": "./dist/index.mjs",
     "require": "./dist/index.js",
-    "default": "./dist/index.js",
-    "types": "./dist/index.d.ts"
+    "default": "./dist/index.js"
   },
   "scripts": {
     "build": "tsup",
@@ -49,27 +49,27 @@
     "url": "https://github.com/acadevmy/cypress-dotenv/issues"
   },
   "dependencies": {
-    "@dotenv-run/core": "^1.3.5",
-    "cypress": "^13.10.0",
-    "lodash": "^4.17.21"
+    "@dotenv-run/core": "^1.3.8",
+    "cypress": "^15.9.0",
+    "lodash": "^4.17.23"
   },
   "devDependencies": {
-    "@devmy/eslint-plugin": "^1.2.0",
+    "@devmy/eslint-plugin": "^1.3.0",
     "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/commit-analyzer": "^13.0.0",
+    "@semantic-release/commit-analyzer": "^13.0.1",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "github:semantic-release/git",
-    "@semantic-release/npm": "^12.0.1",
-    "@semantic-release/release-notes-generator": "^14.0.0",
-    "@types/lodash": "^4.17.4",
-    "@types/node": "^20.14.0",
-    "@typescript-eslint/eslint-plugin": "^7.11.0",
-    "eslint": "8.57.0",
-    "eslint-plugin-cypress": "2.15.1",
-    "prettier": "^3.2.5",
-    "semantic-release": "^24.0.0",
-    "tsup": "^8.1.0",
-    "typescript": "^5.3.3"
+    "@semantic-release/npm": "^13.1.3",
+    "@semantic-release/release-notes-generator": "^14.1.0",
+    "@types/lodash": "^4.17.23",
+    "@types/node": "^25.0.10",
+    "@typescript-eslint/eslint-plugin": "^8.53.1",
+    "eslint": "9.39.2",
+    "eslint-plugin-cypress": "5.2.1",
+    "prettier": "^3.8.1",
+    "semantic-release": "^25.0.2",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
   },
   "packageManager": "pnpm@9.15.4",
   "engines": {
