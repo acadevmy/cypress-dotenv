@@ -29,6 +29,8 @@ or via pnpm:
 pnpm add @devmy/cypress-dotenv
 ```
 
+`cypress` is a peer dependency (`^15.0.0 || ^16.0.0`): the library uses the Cypress version already installed in your project.
+
 ## Usage
 
 ### Dotenv Configuration
@@ -36,7 +38,9 @@ The `dotenv` configuration options in this library use `DotenvRunOptions` of [do
 
 ### `defineConfigWithDotenv`
 
-The `defineConfigWithDotenv` function invokes Cypress's `defineConfig`, loading environment variables from `dotenv`.
+The `defineConfigWithDotenv` function invokes Cypress's `defineConfig`, loading environment variables from `dotenv` into `config.env`. The variables are loaded whether `setupNodeEvents` is declared at the root or inside `e2e` / `component`.
+
+In your tests, read them with `cy.env()` (Cypress 16 removed `Cypress.env()`).
 
 #### Example:
 

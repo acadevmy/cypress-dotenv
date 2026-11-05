@@ -1,7 +1,7 @@
 import type { DotenvRunOptions } from '@dotenv-run/core';
 import { defineConfig } from 'cypress';
 
-import { parseEnvVariables } from '../utilities';
+import { withDotenv } from '../utilities/with-dotenv';
 
 export type CyDefineE2EConfig = Parameters<typeof defineConfig>[0]['e2e'];
 
@@ -14,23 +14,7 @@ export const dotenvE2EPreset = (
 ): CyDefineE2EConfig => {
   const { dotenv, ...config } = dotenvE2EPresetConfigOptions;
 
-  const oldSetupNodeEvents = config.setupNodeEvents;
-
-  config.setupNodeEvents = (
-    onPluginEvent,
-    pluginConfigOptions,
-  ):
-    | Promise<Cypress.PluginConfigOptions | void>
-    | Cypress.PluginConfigOptions
-    | void
-    | undefined => {
-    const nextPluginConfigOptions = parseEnvVariables(
-      dotenv,
-      pluginConfigOptions,
-    );
-
-    return oldSetupNodeEvents?.(onPluginEvent, nextPluginConfigOptions);
-  };
+  config.setupNodeEvents = withDotenv(dotenv, config.setupNodeEvents);
 
   return config;
 };
